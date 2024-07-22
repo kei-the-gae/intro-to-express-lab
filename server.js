@@ -13,8 +13,7 @@ app.get('/greetings/:username', (req, res) => {
 app.get('/roll/:number', (req, res) => {
     if (isNaN(req.params.number)) {
         res.send('You must specify a number.');
-    };
-    if (isNaN(req.params.number) !== true) {
+    } else {
         const random = Math.floor(Math.random() * req.params.number) + 1;
         res.send(`You rolled a ${random}.`);
     };
