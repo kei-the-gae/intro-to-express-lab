@@ -54,30 +54,17 @@ app.get('/shoes', (req, res) => {
     //using query params
     if (minPrice) {
         shoes.forEach((shoe, i) => {
-            if (shoe.price >= minPrice) {
-                if (filteredList.includes(shoe) === false) {
-                    filteredList.push(shoes[i]);
-                };
-            };
+            if (shoe.price >= minPrice) if (filteredList.includes(shoe) === false) filteredList.push(shoes[i]);
         });
     };
     if (maxPrice) {
         shoes.forEach((shoe, i) => {
-            if (shoe.price <= maxPrice) {
-                if (filteredList.includes(shoe) === false) {
-                    filteredList.push(shoes[i]);
-                };
-
-            };
+            if (shoe.price <= maxPrice) if (filteredList.includes(shoe) === false) filteredList.push(shoes[i]);
         });
     };
     if (type) {
         shoes.forEach((shoe, i) => {
-            if (shoe.type === type) {
-                if (filteredList.includes(shoe) === false) {
-                    filteredList.push(shoes[i]);
-                };
-            };
+            if (shoe.type === type) if (filteredList.includes(shoe) === false) filteredList.push(shoes[i]);
         });
     };
     if (!minPrice && !maxPrice && !type) {
